@@ -6,6 +6,7 @@ import org.hibernate.annotations.Where;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity(name = "cliente")
 @SQLDelete(sql = "UPDATE cliente SET deleted_at = now() WHERE id=?")
@@ -33,6 +34,9 @@ public class Clientes {
 
     @Column
     private LocalDateTime deleted_at;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Enderecos> enderecos;
 
     public Long getId() {
         return id;
@@ -88,5 +92,13 @@ public class Clientes {
 
     public void setDeleted_at(LocalDateTime deleted_at) {
         this.deleted_at = deleted_at;
+    }
+
+    public List<Enderecos> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(List<Enderecos> enderecos) {
+        this.enderecos = enderecos;
     }
 }
