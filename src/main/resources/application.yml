@@ -11,6 +11,9 @@ spring:
     password: 601034
     username: postgres
     driverClassName: org.postgresql.Driver
+  sql:
+    init:
+      mode: always
   mail:
     properties:
       mail:
