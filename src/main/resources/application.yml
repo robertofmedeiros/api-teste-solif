@@ -6,12 +6,12 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+    defer-datasource-initialization: true
   datasource:
     url: jdbc:postgresql://localhost:5432/aula_solid
     password: 601034
     username: postgres
     driverClassName: org.postgresql.Driver
-    defer-datasource-initialization: true
   sql:
     init:
       mode: always
