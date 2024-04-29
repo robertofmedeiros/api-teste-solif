@@ -11,6 +11,7 @@ spring:
     password: 601034
     username: postgres
     driverClassName: org.postgresql.Driver
+    defer-datasource-initialization: true
   sql:
     init:
       mode: always
