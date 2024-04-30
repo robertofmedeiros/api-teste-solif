@@ -24,7 +24,7 @@ public class UsuariosController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UsuariosLoginRequestDom usuario) {
         try{
-            return ResponseEntity.status(HttpStatus.CREATED).body(usuariosService.login(usuario));
+            return ResponseEntity.status(HttpStatus.OK).body(usuariosService.login(usuario));
         } catch (SenacException e) {
             e.printStackTrace();
             return ResponseEntity.badRequest().body(ResponseUtil.responseMapper(e.getMessages()));

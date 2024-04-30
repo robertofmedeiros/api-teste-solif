@@ -34,7 +34,7 @@ public class UsuariosBusinessImpl implements UsuariosBusiness {
             throw new SenacException("Usuário não encontrado");
         }
 
-        if(!result.equals(usuario.getUsuario())){
+        if(!result.getSenha().equals(usuario.getSenha())){
             throw new SenacException("Senha invalida");
         }
 
